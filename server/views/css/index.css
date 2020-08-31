@@ -1,6 +1,9 @@
 .nav {
     display: flex;
     font-size: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
 }
 
 .nav-logo > img {
@@ -10,9 +13,48 @@
 }
 
 .tab {
-    
+    max-width: 1350px;
+    margin: 32px auto 16px auto;
+    display: flex;
+    list-style: none;
 }
 
-.tab li {
-    text-decoration: none;
+.tab > li {
+    margin-right: 30px;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.search {
+    max-width: 1350px;
+    margin: 10px auto;
+    display: flex;
+    border: 1px solid #b0b0b0;
+    border-radius: 8px;
+}
+
+.search-input {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.search-input > label {
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+}
+
+.search-input > input {
+    outline: none;
+    border: none;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0;
+}
+
+.search-input > input::placeholder {
+    color: #b0b0b0;
 }
