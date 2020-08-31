@@ -1,0 +1,18 @@
+.nav {
+    display: flex;
+    font-size: 20px;
+}
+
+.nav-logo > img {
+    width: 118px;
+    height: 64px;
+    color: #FF385C;
+}
+
+.tab {
+    
+}
+
+.tab li {
+    text-decoration: none;
+}
