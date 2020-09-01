@@ -1,20 +1,25 @@
 const express = require('express')
 const router = express.Router()
-const { checkDatainUserDB, createNewSession, insertNewSessionID } = require('../models/userData')
+const { checkDatainUserDB, createNewSession, insertNewSessionID, checkSidinSessionDB } = require('../models/userData')
+
+router.use('/', async (req, res, next)=> {
+    const sid = req.cookies.sid
+    const validSid = await checkSidinSessionDB(sid)
+    console.log(sid,validSid)
+    if(validSid) res.redirect('/')
+    else next()
+})
 
 router.get('/register', (req, res) => {
-    // console.log(req)
     res.render('register')
 })
 
 router.get('/login', (req, res) => {
-    // console.log(req)
-    res.render('login')
+    res.status(200).render('login', {isFailed: false})
 })
 
 router.post('/login', async (req, res) => {
     const { body: {email, password} } = req
-    console.log(email, password)
     if (!email || !password) res.redirect('/users/login')
     else {
         const userID = await checkDatainUserDB(email,password)
