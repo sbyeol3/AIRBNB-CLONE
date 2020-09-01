@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const {userdb} = require('../models/userData')
 
 router.get('/register', (req, res) => {
     // console.log(req)
@@ -12,9 +13,11 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-    const { body, url } = req
-    console.log(body, url)
-    // res.render('login')
+    const { body: {email, password} } = req
+    if (!email || !password) res.redirect('/users/login')
+    else {
+
+    } 
 })
 
 module.exports = router
