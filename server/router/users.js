@@ -5,7 +5,6 @@ const { checkDatainUserDB, createNewSession, insertNewSessionID, checkSidinSessi
 router.use('/', async (req, res, next)=> {
     const sid = req.cookies.sid
     const validSid = await checkSidinSessionDB(sid)
-    console.log(sid,validSid)
     if(validSid) res.redirect('/')
     else next()
 })
@@ -23,7 +22,6 @@ router.post('/login', async (req, res) => {
     if (!email || !password) res.redirect('/users/login')
     else {
         const userID = await checkDatainUserDB(email,password)
-        console.log(userID)
         if (userID) {
             res.status(200)
             const sid = createNewSession()
