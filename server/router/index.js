@@ -5,8 +5,7 @@ const { checkSidinSessionDB } = require('../models/userData')
 router.get('/', async (req, res) => {
     const sid = req.cookies.sid
     const validSid = await checkSidinSessionDB(sid)
-    console.log(validSid)
-    res.render('index')
+    res.render('index', {isLoggedIn: validSid})
 })
 
 module.exports = router
