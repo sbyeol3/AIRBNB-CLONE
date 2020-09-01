@@ -4,11 +4,8 @@ html
         title='Airbnb'
         link(rel='stylesheet', href='/css/index.css')
     body
-        nav.nav
-            div.nav-logo
-                img(src="/static/logo2.svg", alt="logo")
-            div.language
-            div.user
+        block NavBar
+            include common/navbar.pug
         ariticle.reservation
             ul.tab
                 li.selected 숙소
@@ -28,21 +25,6 @@ html
                     label(for="personnel") 인원
                     input(type="text" name="personnel" placeholder="게스트 추가")
                 button.search-button.search-small 검색
-        footer#footer
-            section.information
-                ul 소개
-                    li 에어비앤비 이용 방법
-                    li 뉴스룸
-                    li 에어비앤비 플러스
-                    li
-                ul 커뮤니티
-                    li 다양성 및 소속감
-                    li 접근성
-                    li 에어비앤비 어소시에이트
-                    li 구호 인력을 위한 숙소
-                ul 호스팅하기
-                    li 숙소 호스팅하기
-                ul 에어비앤비 지원
-                    li 코로나19 관련 업데이트
-            section.company
+        block Footer
+            include common/footer.pug
         
