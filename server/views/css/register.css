@@ -1,0 +1,71 @@
+#register {
+    max-width: 550px;
+    margin: 20px auto;
+    padding: 5px 20px 20px 20px;
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px;
+    border-radius: 12px;
+    color: #484848;
+    font-size: 14px;
+}
+
+.social-login {
+    margin: 20px auto;
+    font-size: 14px;
+    color: rgb(72, 72, 72);
+    font-weight: 600;
+}
+
+#register-form > .register-input {
+    width: 100%;
+    line-height: 24px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid rgba(20, 20, 20, 0.2);
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+#register-form > .register-button {
+    width: 100%;
+    color: #FFF;
+    line-height: 24px;
+    padding: 10px;
+    background-color: #FF5A5F;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.birthday {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.privacy {
+    font-weight: 400;
+}
+
+.information {
+    display: block;
+}
+
+.marketing {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.marketing > input {
+    border-radius: 5px;
+    width: 16px;
+    height: 16px;
+    margin: 0 7px 0 0;
+}
+
+#register > .login {
+    border-top: 1px solid rgba(70, 70, 70, 0.2);
+    padding-top: 20px;
+    font-size: 15px;
+}

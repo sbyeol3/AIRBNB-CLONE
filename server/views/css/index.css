@@ -1,15 +1,43 @@
+a {
+    color: #008489;
+    text-decoration: none;
+}
+
 .nav {
     display: flex;
     font-size: 20px;
     max-width: 1300px;
     margin: 0 auto;
     padding: 10px 0 0 0;
+    align-items: center;
 }
 
 .nav-logo > img {
     width: 118px;
     height: 64px;
     color: #FF385C;
+}
+
+.nav > .user {
+    display: flex;
+    align-items: center;
+    padding: 5px 3px 5px 10px;
+    border: 1px solid #DDD;
+    border-radius: 21px;
+}
+
+.nav > .user > img {
+    margin: 0 6px;
+}
+
+.nav > .language > img {
+    margin: 0 3px;
+}
+
+.nav > .language {
+    display: flex;
+    margin-left: auto;
+    margin-right: 15px;
 }
 
 .tab {
