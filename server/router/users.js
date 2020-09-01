@@ -12,7 +12,8 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
-    console.log(req)
+    const { body, url } = req
+    console.log(body, url)
     // res.render('login')
 })
 

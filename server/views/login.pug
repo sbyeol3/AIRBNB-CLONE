@@ -2,19 +2,18 @@
 html
     head
         title='Airbnb'
+        script(src='/js/user.js')
         link(rel='stylesheet', href='/css/index.css')
         link(rel='stylesheet', href='/css/register.css')
     body
-        article#register
-            h3.title 회원 가입
-            section.social-login
-                p 
-                    a 페이스북 또는 구글로 가입하세요
-            form#login(action="")
-                input(type="email" placeholder="이메일 주소")
-                input(type="password" placeholder="비밀번호")
+        article#login
+            h3.title 로그인
+            //- section.social-login
+            //-     p 
+            //-         a 페이스북 또는 구글로 가입하세요
+            form#login-form(action="/users/login" method="POST" autocomplete="off")
+                input(type="email" name="email" placeholder="이메일 주소")
+                input(type="password" name="password" placeholder="비밀번호")
                 button(type="submit") 로그인
             p 이미 에어비앤비 계정이 있나요?
-        block Footer
-            include common/footer.pug
         
