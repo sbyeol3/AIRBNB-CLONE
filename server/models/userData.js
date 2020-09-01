@@ -7,16 +7,35 @@ const user = {
     password: 'master'
 }
 
-userdb.insert(user, (err, doc) => {
-    console.log(doc)
-})
+// userdb.insert(user, (err, doc) => {
+//     console.log(doc)
+// })
+
+const insertNewSessionID = (sid, userID) => {
+    return new Promise((resolve, reject) => {
+        sessiondb.insert({_id: sid, userID},(err) => {
+            if (err) reject(err)
+            resolve(true)
+        })
+    })
+}
+
+const checkSidinSessionDB = (sid) => {
+    return new Promise((resolve, reject) => {
+        sessiondb.find({_id: sid}, (err, doc) => {
+            if (err) reject(err)
+            if (doc.length !== 0) resolve(true)
+            resolve(false)
+        })
+    }) 
+}
 
 const checkDatainUserDB = (email, password) => {
     return new Promise((resolve, reject) => {
         userdb.find({email, password}, (err, doc) => {
             if (err) reject(err)
-            if (doc.length !== 0) resolve(true)
-            resolve(false)
+            if (doc.length > 0) resolve(doc[0]._id)
+            resolve(null)
         })
     }) 
 }
@@ -31,4 +50,4 @@ const createNewSession = () => {
     return `${sid}${now.getTime()}`
 }
 
-module.exports = { userdb, sessiondb, checkDatainUserDB, createNewSession}
+module.exports = { checkDatainUserDB, createNewSession, insertNewSessionID, checkSidinSessionDB }
