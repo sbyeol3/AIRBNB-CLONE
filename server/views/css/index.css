@@ -140,6 +140,39 @@ a {
     margin: 10px 10px 10px 0;
 }
 
+.banner {
+    max-width: 1250px;
+    margin: 30px auto;
+    color: #FFF;
+}
+
+.banner-main {
+    background: linear-gradient(35deg, #e66465, #9198e5);
+    box-sizing: border-box;
+    margin-top: 90px;
+    height: 400px;
+    padding: 60px;
+    border-radius: 20px;
+}
+
+.banner-main > h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.banner-main > p {
+    margin: 10px 0 20px 0;
+    font-size: 18px;
+}
+
+.banner-main > a {
+    font-size: 18px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+
+
 #footer {
     background-color: #F7F7F7;
     padding: 40px 0;
