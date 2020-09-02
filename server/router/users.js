@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { checkDatainUserDB, createNewSession, insertNewSessionID, checkSidinSessionDB } = require('../models/userData')
+const { checkDatainUserDB, createNewSession, insertNewSessionID, checkSidinSessionDB, isValidNewEmail, createNewUser } = require('../models/userData')
 
 router.use('/', async (req, res, next)=> {
     const sid = req.cookies.sid
@@ -10,7 +10,30 @@ router.use('/', async (req, res, next)=> {
 })
 
 router.get('/register', (req, res) => {
-    res.render('register')
+    res.render('register', {isDuplicated: false})
+})
+
+router.post('/register', async (req, res) => {
+    const { body: {email} } = req
+    const isValidEmail = await isValidNewEmail(email)
+    console.log(isValidEmail)
+    if (isValidEmail) {
+        res.status(200)
+        const userId = await createNewUser(req.body)
+        if (userId) {
+            const sid = createNewSession()
+            res.cookie('sid', sid)
+            console.log('users.js line 26', userId)
+            const insertResult = await insertNewSessionID(sid, userId)
+            res.redirect('/')
+        } else {
+            res.status(500)
+            res.render('register', {error: true})
+        }
+    } else {
+        res.status(400)
+        res.render('register', {isDuplicated: true})
+    }
 })
 
 router.get('/login', (req, res) => {

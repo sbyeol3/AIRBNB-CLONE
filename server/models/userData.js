@@ -21,6 +21,47 @@ const insertNewSessionID = (sid, userID) => {
     })
 }
 
+const isValidNewEmail = (email) => {
+    return new Promise((resolve, reject) => {
+        userdb.find({email}, (err, doc) => {
+            console.log('find doc', doc)
+            if (err) reject(err)
+            if (doc.length === 0) resolve(true)
+            resolve(false)
+        })
+    }) 
+}
+
+const createNewUser = async(data) => {
+    const {email, password} = data
+    const userId = await insertNewUser(email, password)
+    const result = await insertNewUserInfo(userId, data)
+    return new Promise((resolve, reject) => {
+        if (result) resolve(userId)
+        reject('not completed create user')
+    })
+}
+
+const insertNewUser = (email, password) => {
+    return new Promise((resolve, reject) => {
+        userdb.insert({email, password},(err, doc) => {
+            if (err) reject(err)
+            resolve(doc._id)
+        })
+    })
+}
+
+const insertNewUserInfo = (id, data) => {
+    return new Promise((resolve, reject) => {
+        const {marketing} = data
+        const message = (marketing === 'on') ? false : true
+        userInfodb.insert({_id: id, ...data, marketing: message},(err, doc) => {
+            if (err) reject(err)
+            resolve(true)
+        })
+    })
+}
+
 const checkSidinSessionDB = (sid) => {
     return new Promise((resolve, reject) => {
         sessiondb.find({_id: sid}, (err, doc) => {
@@ -51,4 +92,4 @@ const createNewSession = () => {
     return `${sid}${now.getTime()}`
 }
 
-module.exports = { checkDatainUserDB, createNewSession, insertNewSessionID, checkSidinSessionDB }
+module.exports = { checkDatainUserDB, createNewSession, insertNewSessionID, checkSidinSessionDB, isValidNewEmail, createNewUser }
