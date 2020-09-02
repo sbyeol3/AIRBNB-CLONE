@@ -13,10 +13,11 @@ const user = {
 // })
 
 const insertNewSessionID = (sid, userID) => {
+    const age = new Date().getTime() + 1800000
     return new Promise((resolve, reject) => {
-        sessiondb.insert({_id: sid, userID},(err) => {
+        sessiondb.insert({_id: sid, userID, age},(err) => {
             if (err) reject(err)
-            resolve(true)
+            resolve(age)
         })
     })
 }
@@ -66,7 +67,10 @@ const checkSidinSessionDB = (sid) => {
     return new Promise((resolve, reject) => {
         sessiondb.find({_id: sid}, (err, doc) => {
             if (err) reject(err)
-            if (doc.length !== 0) resolve(true)
+            if (doc.length !== 0) {
+                if (doc[0].age < new Date().getTime()) resolve(true)
+                else resolve(false)
+            }
             resolve(false)
         })
     }) 

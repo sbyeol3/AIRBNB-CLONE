@@ -22,9 +22,8 @@ router.post('/register', async (req, res) => {
         const userId = await createNewUser(req.body)
         if (userId) {
             const sid = createNewSession()
-            res.cookie('sid', sid)
-            console.log('users.js line 26', userId)
-            const insertResult = await insertNewSessionID(sid, userId)
+            const age = await insertNewSessionID(sid, userId)
+            res.cookie('sid', sid, {maxAge: 1800})
             res.redirect('/')
         } else {
             res.status(500)
@@ -49,7 +48,8 @@ router.post('/login', async (req, res) => {
             res.status(200)
             const sid = createNewSession()
             res.cookie('sid', sid)
-            const insertResult = await insertNewSessionID(sid, userID)
+            const age = await insertNewSessionID(sid, userID)
+            res.cookie('sid', sid, {maxAge: 1800})
             res.redirect('/')
         } else {
             res.status(400)
