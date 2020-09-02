@@ -36,12 +36,12 @@ for (let item of birthday) {
     const {tag, text, add='', start, end, reverse = false} = item
     if (reverse) {
         for (let i = start+1; i > end - 1; i--) {
-            const inner = (i === start+1) ? `<option disabled selected>${text}</option>` : `<option value={i}>${i}${add}</option>`
+            const inner = (i === start+1) ? `<option disabled selected>${text}</option>` : `<option value=${i}>${i}${add}</option>`
             tag.innerHTML += inner
         }
     } else {
         for (let i = start-1; i<= end; i++) {
-            const inner = (i === start-1) ? `<option disabled selected>${text}</option>` : `<option value={i}>${i}${add}</option>`
+            const inner = (i === start-1) ? `<option disabled selected>${text}</option>` : `<option value=${i}>${i}${add}</option>`
             tag.innerHTML += inner
         }
     }
