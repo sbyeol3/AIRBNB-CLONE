@@ -10,7 +10,7 @@ router.use('/', async (req, res, next)=> {
 })
 
 router.get('/register', (req, res) => {
-    res.render('register', {isDuplicated: false})
+    res.status(200).render('index', {isDuplicated: false, registerModal: true})
 })
 
 router.post('/register', async (req, res) => {
@@ -37,7 +37,7 @@ router.post('/register', async (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-    res.status(200).render('login', {isFailed: false})
+    res.status(200).render('index', {isFailed: false, loginModal: true})
 })
 
 router.post('/login', async (req, res) => {

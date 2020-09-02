@@ -2,18 +2,21 @@
 html
     head
         title='Airbnb'
-        script(src='/js/user.js')
         link(rel='stylesheet', href='/css/index.css')
         link(rel='stylesheet', href='/css/login.css')
     body
-        article#login
-            h4.title 로그인
-            form#login-form(action="/users/login" method="POST" autocomplete="off")
-                input.login-input(type="email" name="email" placeholder="이메일 주소")
-                input.login-input(type="password" name="password" placeholder="비밀번호")
-                if isFailed
-                    p.login-error 올바르지 않은 이메일이나 비밀번호입니다. 다시 시도해주세요.
-                button.login-button(type="submit") 로그인
-            p.register 에어비앤비 계정이 없으세요?&nbsp;
-                a(href="/users/register") 회원 가입
-        
+        div#modal
+            article#login
+                img.close-button(src="/static/x-icon.svg")
+                h4.title 로그인
+                form#login-form(action="/users/login" method="POST" autocomplete="off")
+                    input.login-input(type="email" name="email" placeholder="이메일 주소")
+                    input.login-input(type="password" name="password" placeholder="비밀번호")
+                    if isFailed
+                        p.login-error 올바르지 않은 이메일이나 비밀번호입니다. 다시 시도해주세요.
+                    button.login-button(type="submit") 로그인
+                p.register 에어비앤비 계정이 없으세요?&nbsp;
+                    a(href="/users/register") 회원 가입
+    
+    script(src='/js/main.js')
+    script(src='/js/login.js')

@@ -6,6 +6,12 @@
     border-radius: 12px;
     color: #484848;
     font-size: 14px;
+    position: relative;
+    background-color: #FFF;
+}
+
+#register > .title {
+    text-align: center;
 }
 
 .social-login {

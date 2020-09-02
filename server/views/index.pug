@@ -25,6 +25,29 @@ html
                     label(for="personnel") 인원
                     input(type="text" name="personnel" placeholder="게스트 추가")
                 button.search-button.search-small 검색
+        section.banner-main
+            h3 가까운 곳에서 즐기는 색다른 여행
+            p 가까운 곳의 숨겨진 아름다움을 발견하는 색다른 <br> 휴가를 즐겨보세요.
+            a 가까운 여행지 둘러보기 >
+        article.banner-sub
+            section.banner
+                p.bannder-text
+                    span.banner-title 온라인 체험
+                    span.banner-desc 세계 각지의 호스트가 진행하고 모두 함께 즐기는 독특한 액티비티
+            section.banner
+                p.bannder-text
+                    span.banner-title 독특한 공간
+                    span.banner-desc 단순한 숙소 이상의 특별함이 담긴 공간
+            section.banner
+                p.bannder-text
+                    span.banner-title 집 전체
+                    span.banner-desc 일행만을 위한 편안한 공간에서 친구 및 가족과 오붓한 시간을 보내세요.
+        if loginModal
+            block loginModalLayer
+                include login.pug
+        if registerModal
+            block registerModalLayer
+                include register.pug 
         block Footer
             include common/footer.pug
         

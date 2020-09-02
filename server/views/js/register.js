@@ -1,3 +1,10 @@
+const modal = document.getElementById('modal')
+const closeButton = document.getElementsByClassName('close-button')[0]
+
+closeButton.addEventListener('click', () => {
+    modal.style.display = "none"
+})
+
 const emailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
 const registerForm = document.getElementById("register-form")
 const inputs = document.getElementsByTagName("input")
