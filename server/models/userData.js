@@ -1,7 +1,7 @@
 const DataStore = require('nedb')
-const userdb = new DataStore({filename: 'user.db', autoload: true})
-const sessiondb = new DataStore({filename: 'session.db', autoload: true})
-const userInfodb = new DataStore({filename: 'userInfo.db', autoload: true})
+const userdb = new DataStore({filename: './database/user.db', autoload: true})
+const sessiondb = new DataStore({filename: './database/session.db', autoload: true})
+const userInfodb = new DataStore({filename: './database/userInfo.db', autoload: true})
 
 const user = {
     email: 'master@naver.com',
