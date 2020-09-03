@@ -1,0 +1,11 @@
+mixin searchItem(title, description1, description2, price, image)
+    section.item
+        img(src=image, alt="image")
+        div
+            p.title=title
+            div.description
+                p.desc1=description1
+                p.desc2=description2
+            div.bottom
+                span.score=score
+                span.review=review

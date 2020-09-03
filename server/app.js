@@ -4,12 +4,13 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const app = express()
-const port = 3000
+const port = 5000
 
 const DataStore = require('nedb')
 
 const mainRouter = require('./router/index.js')
 const userRouter = require('./router/users.js')
+const searchRouter = require('./router/search.js')
 
 app.use(logger('dev'))
 app.set('view engine', 'pug')
@@ -23,18 +24,19 @@ app.use(express.json());
 
 app.use('/', mainRouter)
 app.use('/users', userRouter)
+app.use('/search', searchRouter)
 
 app.use((req, res, next) => {
   next(createError(404));
-});
+})
  
 app.use((err, req, res, next) => {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.message = err.message
+  res.locals.error = req.app.get('env') === 'development' ? err : {}
  
-  res.status(err.status || 500);
-  res.render('error');
-});
+  res.status(err.status || 500)
+  res.render('error')
+})
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}...`)
