@@ -27,11 +27,11 @@ router.post('/register', async (req, res) => {
             res.redirect('/')
         } else {
             res.status(500)
-            res.render('register', {error: true})
+            res.render('index', {error: true})
         }
     } else {
         res.status(400)
-        res.render('register', {isDuplicated: true})
+        res.render('index', {isDuplicated: true})
     }
 })
 
@@ -53,7 +53,7 @@ router.post('/login', async (req, res) => {
             res.redirect('/')
         } else {
             res.status(400)
-            res.render('login', {isFailed: true})
+            res.render('index', {isFailed: true, loginModal: true})
         }
     } 
 })

@@ -11,6 +11,11 @@ a {
     left: 20px;
 }
 
+.error {
+    color: #D11;
+    font-size: 14px;
+}
+
 .wrong-input {
     border: 1px solid rgba(240, 53, 53, 0.8) !important;
 }

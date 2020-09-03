@@ -22,6 +22,15 @@ const insertNewSessionID = (sid, userID) => {
     })
 }
 
+const deleteSessionId = (sid) => {
+    return new Promise((resolve, reject) => {
+        sessiondb.remove({_id: sid},(err) => {
+            if (err) resolve(false)
+            resolve(true)
+        })
+    })
+}
+
 const isValidNewEmail = (email) => {
     return new Promise((resolve, reject) => {
         userdb.find({email}, (err, doc) => {
@@ -96,4 +105,4 @@ const createNewSession = () => {
     return `${sid}${now.getTime()}`
 }
 
-module.exports = { checkDatainUserDB, createNewSession, insertNewSessionID, checkSidinSessionDB, isValidNewEmail, createNewUser }
+module.exports = { checkDatainUserDB, createNewSession, insertNewSessionID, checkSidinSessionDB, isValidNewEmail, createNewUser, deleteSessionId }
