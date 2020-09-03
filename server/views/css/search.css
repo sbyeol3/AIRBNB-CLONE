@@ -45,12 +45,12 @@ body {
 }
 
 .search-top {
-    padding: 100px 0 0 20px;
+    padding: 100px 0 0 0;
 }
 
 #result {
     display: flex;
-    padding: 0 20px;
+    padding-left: 20px;
 }
 
 #search-map {
@@ -113,4 +113,11 @@ body {
 
 .item-text > .bottom {
     margin-top: auto;
+}
+
+#search-map {
+    height: 100vh;
+    background-color: #3D5;
+    position: sticky;
+    top: 0px;
 }
