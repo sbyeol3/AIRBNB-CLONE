@@ -7,7 +7,10 @@ html
         //- include searchHeader.pug
         //- +header('title')
         div.top
-            h2 종로구의 숙소
-        include searchItem.pug
-        +searchItem('title')  
+            h2 #{length}개의 #{location}의 숙소
+        article#items
+            include searchItem.pug
+            - for (let item of data)
+                - const {title, description1, description2, price, image} = item
+                +searchItem(title, description1, description2, price, image)  
     

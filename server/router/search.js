@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
         return false
     })
 
-    res.render('search', {isLoggedIn:validSid, data: result})
+    res.render('search', {isLoggedIn:validSid, data: result, location, length: result.length})
 })
 
 module.exports = router
