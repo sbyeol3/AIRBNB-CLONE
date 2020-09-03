@@ -77,7 +77,8 @@ const checkSidinSessionDB = (sid) => {
         sessiondb.find({_id: sid}, (err, doc) => {
             if (err) reject(err)
             if (doc.length !== 0) {
-                if (doc[0].age < new Date().getTime()) resolve(true)
+                console.log(doc[0].age, new Date().getTime())
+                if (doc[0].age > new Date().getTime()) resolve(true)
                 else resolve(false)
             }
             resolve(false)
