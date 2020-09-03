@@ -1,12 +1,17 @@
+body {
+    margin: 0;
+}
+
 .search-nav {
     box-sizing: border-box;
-    position: absolute;
+    position: fixed;
     width: 1300px;
-    top: 30px;
+    top: 20px;
     color: #222222;
     text-align: center;
     font-weight: 600;
     font-size: 14px;
+    z-index: 15;
 }
 
 .search-nav > .nav-inner {
@@ -39,8 +44,13 @@
     align-items: center;
 }
 
+.search-top {
+    padding: 100px 0 0 20px;
+}
+
 #result {
     display: flex;
+    padding: 0 20px;
 }
 
 #search-map {

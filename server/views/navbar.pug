@@ -5,7 +5,7 @@ include register.pug
 
 mixin navBar(isLoggedIn)
     nav.nav#navbar
-        div.nav-logo
+        a.nav-logo(href="/")
             img(src="/static/logo2.svg", alt="logo")
         div.language
             img(src="/static/globe.svg", alt="globe-icon", style="width:16px; height:16px;")
