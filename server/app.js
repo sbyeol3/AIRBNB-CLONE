@@ -42,4 +42,4 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}...`)
 })
 
-module.exports = { DataStore, app }
+module.exports = app
