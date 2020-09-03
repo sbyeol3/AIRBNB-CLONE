@@ -11,7 +11,7 @@ mixin login(isFailed)
                 input.login-input(type="password" name="password" placeholder="비밀번호")
                 if isFailed
                     p.login-error 올바르지 않은 이메일이나 비밀번호입니다. 다시 시도해주세요.
-                button.login-button(type="submit") 로그인
+                button#login-button(type="submit") 로그인
             p.register 에어비앤비 계정이 없으세요?&nbsp;
                 a(href="/users/register") 회원 가입
     block append script

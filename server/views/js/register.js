@@ -1,14 +1,25 @@
 const modal = document.getElementById('register-modal')
 const closeButton = document.getElementsByClassName('close-button')[1]
+const submitButton = document.getElementById('register-button')
+const { month, day, year } = document.getElementsByTagName("select")
 
 closeButton.addEventListener('click', () => {
     modal.style.display = "none"
 })
 
+const checkDisabled = () => {
+    const errors = document.getElementsByClassName('wrong-input')
+    console.log(errors)
+    if (errors.length > 0) submitButton.setAttribute("disabled", true)
+    else {
+        if (month.value !== '월' && day.value !== '일' && year.value !== '년') submitButton.removeAttribute('disabled')
+        else submitButton.setAttribute("disabled", true)
+    }
+}
+
 const emailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
 const registerForm = document.getElementById("register-form")
 const inputs = document.getElementsByTagName("input")
-const { month, day, year } = document.getElementsByTagName("select")
 
 const condition = {
     email: {regexp: emailRegExp},
@@ -28,13 +39,13 @@ const checkCondition = (tag, name, value) => {
     if (regexp && !value.match(regexp)) tag.classList.add('wrong-input')
     else if (length && value.length < length) tag.classList.add('wrong-input')
     else tag.classList.remove('wrong-input')
+    checkDisabled()
 }
 
 for (let tag of inputs) {
     const { name } = tag
     tag.addEventListener("change", ({target}) => {
         const { value } = target
-        console.log(tag, name, value)
         checkCondition(tag, name, value)
     })
 }
@@ -52,5 +63,5 @@ for (let item of birthday) {
             tag.innerHTML += inner
         }
     }
-
+    tag.addEventListener("change", () => checkDisabled())
 }
