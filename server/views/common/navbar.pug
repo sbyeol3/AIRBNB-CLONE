@@ -13,9 +13,12 @@ mixin navBar(isLoggedIn)
             img(src="/static/user.svg", alt="user-icon", style="width:30px; height:30px;")
         div#user-menu(style="display:none;")
             div#menu-tgl
-                if isLoggedIn
+                if !isLoggedIn
                     section#register-open.menu 회원가입
                     section#login-open.menu 로그인
+                else
+                    section.menu
+                        a#logout(href="/logout") 로그아웃
                 section.menu 숙소 호스팅되기
                 section.menu 체험 호스팅하기
                 section.menu 도움말
