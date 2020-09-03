@@ -1,0 +1,15 @@
+mixin searchItem(title, description1, description2, price, image, score, review)
+    section.item
+        img(src=image, alt="image")
+        div.item-text
+            p.title=title
+            span.line
+            div.description
+                p.desc1=description1
+                p.desc2=description2
+            div.bottom
+                span.score
+                    img.score-icon(src="/static/star.svg", alt="")
+                    span #{score}
+                span.review (#{review})
+                span.price=price

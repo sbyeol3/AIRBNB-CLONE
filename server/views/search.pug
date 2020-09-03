@@ -1,0 +1,19 @@
+
+html
+    head
+        title='Airbnb : 검색 결과'
+        link(rel='stylesheet', href='/css/search.css')
+    body
+        include navbar.pug
+        +navBar(isLoggedIn)  
+        include searchHeader.pug
+        +header(location)
+        div#result
+            article#items
+                div.search-top
+                    h2 #{length}개의 #{location}의 숙소
+                include searchItem.pug
+                - for (let item of data)
+                    - const {title, description1, description2, price, image, score, review} = item
+                    +searchItem(title, description1, description2, price, image, score, review)  
+            article#search-map

@@ -1,12 +1,10 @@
+block append styles
+  link(rel='stylesheet', href='/css/login.css')
 
-html
-    head
-        title='Airbnb'
-        script(src='/js/user.js')
-        link(rel='stylesheet', href='/css/index.css')
-        link(rel='stylesheet', href='/css/login.css')
-    body
+mixin login(isFailed)
+    div#login-modal(style="display:none;")
         article#login
+            img.close-button(src="/static/x-icon.svg")
             h4.title 로그인
             form#login-form(action="/users/login" method="POST" autocomplete="off")
                 input.login-input(type="email" name="email" placeholder="이메일 주소")
@@ -16,4 +14,7 @@ html
                 button.login-button(type="submit") 로그인
             p.register 에어비앤비 계정이 없으세요?&nbsp;
                 a(href="/users/register") 회원 가입
-        
+    block append script
+        script(src='/js/main.js')
+    block append script
+        script(src='/js/login.js')

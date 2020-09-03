@@ -1,48 +1,20 @@
+body {
+    margin: 0;
+}
+
 a {
     color: #008489;
     text-decoration: none;
 }
 
-.nav {
-    display: flex;
-    font-size: 20px;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 10px 0 0 0;
-    align-items: center;
-}
-
-.nav-logo > img {
-    width: 118px;
-    height: 64px;
-    color: #FF385C;
-}
-
-.nav > .user {
-    display: flex;
-    align-items: center;
-    padding: 5px 3px 5px 10px;
-    border: 1px solid #DDD;
-    border-radius: 21px;
-}
-
-.nav > .user > img {
-    margin: 0 6px;
-}
-
-.nav > .language > img {
-    margin: 0 3px;
-}
-
-.nav > .language {
-    display: flex;
-    margin-left: auto;
-    margin-right: 15px;
+button {
+    cursor: pointer;
 }
 
 .tab {
     max-width: 1280px;
-    margin: 32px auto 16px auto;
+    padding-top: 120px;
+    margin: 0 auto 16px auto;
     display: flex;
     list-style: none;
 }
@@ -116,6 +88,39 @@ a {
     border-radius: 15px;
     margin: 10px 10px 10px 0;
 }
+
+.banner {
+    max-width: 1250px;
+    margin: 30px auto;
+    color: #FFF;
+}
+
+.banner-main {
+    background: linear-gradient(35deg, #e66465, #9198e5);
+    box-sizing: border-box;
+    margin-top: 90px;
+    height: 400px;
+    padding: 60px;
+    border-radius: 20px;
+}
+
+.banner-main > h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.banner-main > p {
+    margin: 10px 0 20px 0;
+    font-size: 18px;
+}
+
+.banner-main > a {
+    font-size: 18px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+
 
 #footer {
     background-color: #F7F7F7;

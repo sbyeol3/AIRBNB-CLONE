@@ -6,6 +6,8 @@
     border-radius: 12px;
     color: #484848;
     text-align: center;
+    position: relative;
+    background-color: #FFF;
 }
 
 #login-form > .login-input {

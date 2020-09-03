@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+}
+
+.search-nav {
+    box-sizing: border-box;
+    position: fixed;
+    width: 1300px;
+    top: 20px;
+    color: #222222;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 15;
+}
+
+.search-nav > .nav-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    border: 1px solid #DDDDDD;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.nav-inner .item img {
+    width: 16px;
+    height: 17px;
+    margin: 0 10px 0 0;
+}
+
+.nav-inner > .item {
+    padding: 15px 22px;
+}
+
+.nav-inner > .center {
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+}
+
+.nav-inner > .left {
+    display: flex;
+    align-items: center;
+}
+
+.search-top {
+    padding: 100px 0 0 0;
+}
+
+#result {
+    display: flex;
+    padding-left: 20px;
+}
+
+#search-map {
+    flex: 0.8;
+}
+
+#items {
+    flex: 1;
+    background-color: #FFF;
+}
+
+#items > .item {
+    min-height: 250px;
+    display: flex;
+    padding: 20px 5px;
+    color: #484848;
+    border-bottom: 1px solid rgba(10,10,10,0.2);
+    box-sizing: border-box;
+}
+
+.item > img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.item > .item-text {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.item-text > .title {
+    color: #222;
+    font-size: 18px;
+    font-family: Circular;
+    letter-spacing: 0.8px;
+    margin: 5px 0;
+}
+
+.item-text > .line {
+    width: 30px;
+    border-bottom: solid 1px rgba(10,10,10,0.2);
+    margin: 10px 0;
+}
+
+.item-text .description {
+    color: #717171;
+    font-size: 14px;
+}
+
+.description .desc1 {
+    margin: 5px 0 0 0;
+}
+
+.description .desc2 {
+    margin: 4px 0 0 0;
+}
+
+.item-text > .bottom {
+    margin-top: auto;
+    display: flex;
+}
+
+.bottom > .score {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: 14px;
+}
+
+.score-icon {
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+}
+
+.bottom > .review {
+    margin-left: 5px;
+    font-size: 14px;
+    color: #717171;
+}
+
+.bottom > .price {
+    margin-left: auto;
+}
+
+#search-map {
+    height: 100vh;
+    background-color: #3D5;
+    position: sticky;
+    top: 0px;
+}
