@@ -1,2 +1,10 @@
-mixin header()
-    
+mixin header(location)
+    div.search-nav
+        div.nav-inner
+            .left.item
+                img(src="/static/glass.svg", alt="search-icon")
+                span=location
+            .center.item
+                span 날짜 입력
+            .right.item
+                span 게스트 입력
