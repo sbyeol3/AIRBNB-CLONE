@@ -1,3 +1,42 @@
+.close-button {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    cursor: pointer;
+}
+
+a {
+    color: #008489;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+#register-modal,
+#login-modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.error {
+    color: #D11;
+    font-size: 14px;
+}
+
+.wrong-input {
+    border: 1px solid rgba(240, 53, 53, 0.8) !important;
+}
+
 .nav {
     display: flex;
     font-size: 20px;

@@ -1,6 +1,7 @@
 .search-nav {
+    box-sizing: border-box;
     position: absolute;
-    width: 100%;
+    width: 1300px;
     top: 30px;
     color: #222222;
     text-align: center;
@@ -38,7 +39,16 @@
     align-items: center;
 }
 
+#result {
+    display: flex;
+}
+
+#search-map {
+    flex: 0.8;
+}
+
 #items {
+    flex: 1;
     background-color: #FFF;
 }
 

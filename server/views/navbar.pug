@@ -1,5 +1,7 @@
 block append styles
   link(rel='stylesheet', href='/css/navbar.css')
+include login.pug
+include register.pug 
 
 mixin navBar(isLoggedIn)
     nav.nav#navbar
@@ -22,3 +24,5 @@ mixin navBar(isLoggedIn)
                 section.menu 숙소 호스팅되기
                 section.menu 체험 호스팅하기
                 section.menu 도움말
+    +login(false)
+    +register(false)
