@@ -3,12 +3,17 @@ a {
     text-decoration: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 .close-button {
     width: 16px;
     height: 16px;
     position: absolute;
     top: 25px;
     left: 20px;
+    cursor: pointer;
 }
 
 .error {
@@ -20,7 +25,8 @@ a {
     border: 1px solid rgba(240, 53, 53, 0.8) !important;
 }
 
-#modal {
+#register-modal,
+#login-modal {
     position: fixed;
     z-index: 1;
     left: 0;
@@ -29,43 +35,6 @@ a {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.2);
-}
-
-.nav {
-    display: flex;
-    font-size: 20px;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 10px 0 0 0;
-    align-items: center;
-}
-
-.nav-logo > img {
-    width: 118px;
-    height: 64px;
-    color: #FF385C;
-}
-
-.nav > .user {
-    display: flex;
-    align-items: center;
-    padding: 5px 3px 5px 10px;
-    border: 1px solid #DDD;
-    border-radius: 21px;
-}
-
-.nav > .user > img {
-    margin: 0 6px;
-}
-
-.nav > .language > img {
-    margin: 0 3px;
-}
-
-.nav > .language {
-    display: flex;
-    margin-left: auto;
-    margin-right: 15px;
 }
 
 .tab {

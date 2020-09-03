@@ -4,8 +4,8 @@ html
         title='Airbnb'
         link(rel='stylesheet', href='/css/index.css')
     body
-        block NavBar
-            include common/navbar.pug
+        include common/navbar.pug
+        +navBar(isLoggedIn)  
         ariticle.reservation
             ul.tab
                 li.selected 숙소
@@ -42,12 +42,10 @@ html
                 p.bannder-text
                     span.banner-title 집 전체
                     span.banner-desc 일행만을 위한 편안한 공간에서 친구 및 가족과 오붓한 시간을 보내세요.
-        if loginModal
-            block loginModalLayer
-                include login.pug
-        if registerModal
-            block registerModalLayer
-                include register.pug 
+        block loginModalLayer
+            include login.pug
+        block registerModalLayer
+            include register.pug 
         block Footer
             include common/footer.pug
-        
+    

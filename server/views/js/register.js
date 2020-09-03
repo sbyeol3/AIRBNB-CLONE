@@ -1,5 +1,5 @@
-const modal = document.getElementById('modal')
-const closeButton = document.getElementsByClassName('close-button')[0]
+const modal = document.getElementById('register-modal')
+const closeButton = document.getElementsByClassName('close-button')[1]
 
 closeButton.addEventListener('click', () => {
     modal.style.display = "none"

@@ -9,10 +9,6 @@ router.use('/', async (req, res, next)=> {
     else next()
 })
 
-router.get('/register', (req, res) => {
-    res.status(200).render('index', {isDuplicated: false, registerModal: true})
-})
-
 router.post('/register', async (req, res) => {
     const { body: {email} } = req
     const isValidEmail = await isValidNewEmail(email)
@@ -33,10 +29,6 @@ router.post('/register', async (req, res) => {
         res.status(400)
         res.render('index', {isDuplicated: true})
     }
-})
-
-router.get('/login', (req, res) => {
-    res.status(200).render('index', {isFailed: false, loginModal: true})
 })
 
 router.post('/login', async (req, res) => {

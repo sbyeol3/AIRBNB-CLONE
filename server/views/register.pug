@@ -2,10 +2,9 @@
 html
     head
         title='Airbnb'
-        link(rel='stylesheet', href='/css/index.css')
         link(rel='stylesheet', href='/css/register.css')
     body
-        div#modal
+        div#register-modal(style="display:none;")
             article#register
                 img.close-button(src="/static/x-icon.svg")
                 h3.title 회원 가입
