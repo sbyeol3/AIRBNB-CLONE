@@ -18,12 +18,12 @@ router.post('/register', async (req, res) => {
         const userId = await createNewUser(req.body)
         if (userId) {
             const sid = createNewSession()
-            const age = await insertNewSessionID(sid, userId)
-            res.cookie('sid', sid, {maxAge: 1800})
+            await insertNewSessionID(sid, userId)
+            res.cookie('sid', sid, {maxAge: 1800000})
             res.redirect('/')
         } else {
             res.status(500)
-            res.render('index', {error: true})
+            res.render('error')
         }
     } else {
         res.status(400)
@@ -39,13 +39,12 @@ router.post('/login', async (req, res) => {
         if (userID) {
             res.status(200)
             const sid = createNewSession()
-            res.cookie('sid', sid)
-            const age = await insertNewSessionID(sid, userID)
-            res.cookie('sid', sid, {maxAge: 1800})
+            await insertNewSessionID(sid, userID)
+            res.cookie('sid', sid, {maxAge: 1800000})
             res.redirect('/')
         } else {
             res.status(400)
-            res.render('index', {isFailed: true, loginModal: true})
+            res.render('index', {isFailed: true})
         }
     } 
 })
