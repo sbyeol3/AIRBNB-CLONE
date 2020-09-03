@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const data = require('../database/data.json')
+const data = require('../database/data1.json')
 const { checkSidinSessionDB } = require('../models/userData')
 
 router.get('/', async (req, res) => {

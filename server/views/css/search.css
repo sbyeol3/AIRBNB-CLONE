@@ -82,6 +82,7 @@ body {
     padding: 0 20px;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .item-text > .title {
@@ -113,6 +114,30 @@ body {
 
 .item-text > .bottom {
     margin-top: auto;
+    display: flex;
+}
+
+.bottom > .score {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: 14px;
+}
+
+.score-icon {
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+}
+
+.bottom > .review {
+    margin-left: 5px;
+    font-size: 14px;
+    color: #717171;
+}
+
+.bottom > .price {
+    margin-left: auto;
 }
 
 #search-map {
