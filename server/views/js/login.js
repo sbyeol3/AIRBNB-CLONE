@@ -1,6 +1,2 @@
 const modal = document.getElementById('login-modal')
-const closeButton = document.getElementsByClassName('close-button')[0]
-
-closeButton.addEventListener('click', () => {
-    modal.style.display = "none"
-})
+if (modal.getAttribute("isFailed")) modal.style.display = "block"

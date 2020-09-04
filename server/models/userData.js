@@ -1,4 +1,5 @@
 const DataStore = require('nedb')
+const cryptoJS = require("crypto-js")
 const userdb = new DataStore({filename: './database/user.db', autoload: true})
 const sessiondb = new DataStore({filename: './database/session.db', autoload: true})
 const userInfodb = new DataStore({filename: './database/userInfo.db', autoload: true})
@@ -44,8 +45,9 @@ const isValidNewEmail = (email) => {
 
 const createNewUser = async(data) => {
     const {email, password} = data
-    const userId = await insertNewUser(email, password)
-    const result = await insertNewUserInfo(userId, data)
+    const encryptedPassword = cryptoJS.AES.encrypt(password, 'boostcamp').toString();
+    const userId = await insertNewUser(email, encryptedPassword)
+    const result = await insertNewUserInfo(userId, {...data, password: encryptedPassword})
     return new Promise((resolve, reject) => {
         if (result) resolve(userId)
         reject('not completed create user')
@@ -88,9 +90,14 @@ const checkSidinSessionDB = (sid) => {
 
 const checkDatainUserDB = (email, password) => {
     return new Promise((resolve, reject) => {
-        userdb.find({email, password}, (err, doc) => {
+        userdb.find({email}, (err, doc) => {
             if (err) reject(err)
-            if (doc.length > 0) resolve(doc[0]._id)
+            if (doc.length > 0) {
+                const cipher = doc[0].password
+                const bytes  = cryptoJS.AES.decrypt(cipher, 'boostcamp')
+                const decrypted = bytes.toString(cryptoJS.enc.Utf8)
+                if (decrypted === password) resolve(doc[0]._id)
+            }
             resolve(null)
         })
     }) 
