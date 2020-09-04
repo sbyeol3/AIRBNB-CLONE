@@ -91,8 +91,8 @@ button {
 
 .banner {
     max-width: 1250px;
-    margin: 30px auto;
-    color: #FFF;
+    padding: 30px;
+    margin: 0 auto;
 }
 
 .banner-main {
@@ -102,6 +102,7 @@ button {
     height: 400px;
     padding: 60px;
     border-radius: 20px;
+    color: #FFF;
 }
 
 .banner-main > h1 {
@@ -120,7 +121,39 @@ button {
     font-weight: bold;
 }
 
+.banner.sub-section {
+    display: flex;
+    justify-content: space-between;
+}
 
+.banner-sub {
+    border-radius: 15px;
+    box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.08), -1px -1px 1px rgba(0, 0, 0, 0.06);
+    width: 32%;
+    color: #222;
+    margin: 20px 0 40px 0;
+    cursor: pointer;
+}
+
+.banner-sub > img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+.banner-sub > .banner-text {
+    margin : 15px 15px 40px 15px;
+}
+
+.banner-text > .banner-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 5px 0 5px 0;
+}
+
+.banner-text > .banner-desc {
+    font-size: 14px;
+    color: #717171;
+}
 
 #footer {
     background-color: #F7F7F7;
