@@ -2,9 +2,10 @@ block append styles
   link(rel='stylesheet', href='/css/register.css')
 
 mixin register(isDuplicated, error)
-    div#register-modal(style="display:none;")
+    div#register-modal(style="display:none;" isDuplicated=isDuplicated)
         article#register
-            img.close-button(src="/static/x-icon.svg")
+            a(href="/")
+                img.close-button(src="/static/x-icon.svg")
             h3.title 회원 가입
             section.social-login
                 p 

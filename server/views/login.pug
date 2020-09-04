@@ -2,9 +2,10 @@ block append styles
   link(rel='stylesheet', href='/css/login.css')
 
 mixin login(isFailed)
-    div#login-modal(style="display:none;")
+    div#login-modal(style="display:none;" isFailed=isFailed)
         article#login
-            img.close-button(src="/static/x-icon.svg")
+            a(href="/")
+                img.close-button(src="/static/x-icon.svg")
             h4.title 로그인
             form#login-form(action="/users/login" method="POST" autocomplete="off")
                 input.login-input(type="email" name="email" placeholder="이메일 주소")

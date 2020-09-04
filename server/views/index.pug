@@ -5,7 +5,7 @@ html
         link(rel='stylesheet', href='/css/index.css')
     body
         include navbar.pug
-        +navBar(isLoggedIn)  
+        +navBar(isLoggedIn, isFailed, isDuplicated)  
         ariticle.reservation
             ul.tab
                 li.selected 숙소

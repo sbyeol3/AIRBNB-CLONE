@@ -1,15 +1,15 @@
 const modal = document.getElementById('register-modal')
-const closeButton = document.getElementsByClassName('close-button')[1]
+if (modal.getAttribute("isDuplicated")) modal.style.display = "block"
+// const closeButton = document.getElementsByClassName('close-button')[1]
 const submitButton = document.getElementById('register-button')
 const { month, day, year } = document.getElementsByTagName("select")
 
-closeButton.addEventListener('click', () => {
-    modal.style.display = "none"
-})
+// closeButton.addEventListener('click', () => {
+//     modal.style.display = "none"
+// })
 
 const checkDisabled = () => {
     const errors = document.getElementsByClassName('wrong-input')
-    console.log(errors)
     if (errors.length > 0) submitButton.setAttribute("disabled", true)
     else {
         if (month.value !== '월' && day.value !== '일' && year.value !== '년') submitButton.removeAttribute('disabled')
