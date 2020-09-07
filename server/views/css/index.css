@@ -1,9 +1,11 @@
+@import "color.css";
+
 body {
     margin: 0;
 }
 
 a {
-    color: #008489;
+    color: var(--main-link);
     text-decoration: none;
 }
 
@@ -34,7 +36,7 @@ button {
     max-width: 1250px;
     margin: 10px auto;
     display: flex;
-    border: 1px solid #b0b0b0;
+    border: 1px solid var(--main-border);
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -50,13 +52,24 @@ button {
 }
 
 .search-medium {
+    position: relative;
+    box-sizing: border-box;
     flex: 1.3;
+    cursor: pointer;
+}
+
+.search-medium:hover {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
 }
 
 .search-small {
-    flex: 0.7;
+    flex: 0.9;
+    display: flex;
+    justify-content: center;
 }
 
+.label,
 .search-input > label {
     font-size: 11px;
     line-height: 12px;
@@ -73,20 +86,67 @@ button {
     padding: 0;
 }
 
+.input-div,
 .search-input > input::placeholder {
     color: #777;
+    font-size: 14px;
 }
 
 .search-button { 
     width: 100px;
     /* background-image: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% ); */
-    background-color: #FF385C;
+    background-color: var(--main-red);
     border: none;
     outline: none;
     color: #FFF;
     line-height: 20px;
     border-radius: 15px;
     margin: 10px 10px 10px 0;
+}
+
+.day-picker {
+    cursor: default;
+    position: absolute;
+    top: 100px;
+    display: flex;
+    border: 1px solid var(--main-border);
+    background-color: #FFF;
+    border-radius: 10px;
+    /* padding: 20px; */
+    justify-content: space-between;
+}
+
+.day-picker .month {
+    margin: 20px;
+}
+
+.month caption {
+    font-weight: 600;
+    color: var(--main-black);
+    margin: 20px;
+}
+
+.month th, .month td {
+    text-align: center;
+}
+
+.month td .day:hover{
+    border: 1px solid var(--main-black);
+    border-radius: 100%;
+}
+
+.month td {
+    width: 30px;
+    height: 30px;
+    padding: 13px 14px;
+    font-size: 14px;
+    color: var(--main-black);
+    font-weight: 600;
+}
+
+.day-picker .attribute {
+    font-size: 12px;
+    color: var(--main-gray);
 }
 
 .banner {
@@ -152,7 +212,7 @@ button {
 
 .banner-text > .banner-desc {
     font-size: 14px;
-    color: #717171;
+    color: var(--main-gray);
 }
 
 #footer {
@@ -162,7 +222,7 @@ button {
 
 #footer > .information {
     display: flex;
-    color: #222;
+    color: var(--main-black);
     justify-content: space-around;
 }
 

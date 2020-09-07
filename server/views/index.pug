@@ -5,6 +5,7 @@ html
         link(rel='stylesheet', href='/css/index.css')
     body
         include navbar.pug
+        include dayPicker.pug
         +navBar(isLoggedIn, isFailed, isDuplicated)  
         ariticle.reservation
             ul.tab
@@ -14,17 +15,19 @@ html
             form(action="/search").search
                 div.search-input.search-large
                     label(for="location") 위치
-                    input(type="text" name="location" placeholder="어디로 여행가세요?")
-                div.search-input.search-medium
-                    label(for="checkin") 체크인
-                    input(type="text" name="checkin" placeholder="날짜 추가")
-                div.search-input.search-medium
-                    label(for="checkout") 체크아웃
-                    input(type="text" name="checkout" placeholder="날짜 추가")
-                div.search-input.search-medium
-                    label(for="personnel") 인원
-                    input(type="text" name="personnel" placeholder="게스트 추가")
-                button.search-button.search-small 검색
+                    input(id="location" type="text" name="location" placeholder="어디로 여행가세요?")
+                div#checkin.search-input.search-medium.calendar
+                    div.label 체크인
+                    div.input-div 날짜 추가
+                    +dayPicker(9)
+                div#checkout.search-input.search-medium.calendar
+                    div.label 체크아웃
+                    div.input-div 날짜 추가
+                div#guest.search-input.search-medium
+                    div.label 인원
+                    div.input-div 게스트 추가
+                div.search-small
+                    button.search-button 검색
         section.banner.banner-main
             h1 가까운 곳에서 즐기는<br>색다른 여행
             p 가까운 곳의 숨겨진 아름다움을 발견하는 색다른 <br> 휴가를 즐겨보세요.

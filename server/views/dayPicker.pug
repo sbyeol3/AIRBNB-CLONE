@@ -1,0 +1,29 @@
+mixin dayPicker(month=(new Date().getMonth())+1)
+    div.day-picker(month=month)
+
+        table.this-month.month(month=month)
+            caption 2020년 #{month}월
+            thead
+                tr.attribute
+                    th 일
+                    th 월
+                    th 화
+                    th 수
+                    th 목
+                    th 금
+                    th 토
+            tbody
+        table.next-month.month(month=(month+1))
+            caption 2020년 #{month+1}월
+            thead
+                tr.attribute
+                    th 일
+                    th 월
+                    th 화
+                    th 수
+                    th 목
+                    th 금
+                    th 토
+            tbody
+    block append script
+        script(src='/js/calendar.js')
