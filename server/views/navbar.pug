@@ -13,7 +13,7 @@ mixin navBar(isLoggedIn, isFailed, isDuplicated)
         div#hamburger.user
             img(src="/static/hamburger.svg", alt="hamburger-icon", style="width:16px; height:16px;")
             img(src="/static/user.svg", alt="user-icon", style="width:30px; height:30px;")
-        div#user-menu(style="display:none;")
+        div#user-menu(style="visibility: hidden")
             div#menu-tgl
                 if !isLoggedIn
                     section#register-open.menu 회원가입

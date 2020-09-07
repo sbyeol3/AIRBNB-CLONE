@@ -4,18 +4,18 @@ const login = document.getElementById('login-open')
 
 const toggleUserMenu = () => {
     const userMenu = document.getElementById('user-menu')
-    if (userMenu.style.display === "none") userMenu.style.display = "block"
-    else userMenu.style.display = "none"
+    if (userMenu.style.visibility === "hidden") userMenu.style.visibility = "visible"
+    else userMenu.style.visibility = "hidden"
 }
 
 const openRegisterModal = () => {
     const registerModal = document.getElementById('register-modal')
-    registerModal.style.display = 'block'
+    registerModal.style.visibility = 'visible'
 }
 
 const openLoginModal = () => {
     const loginModal = document.getElementById('login-modal')
-    loginModal.style.display = 'block'
+    loginModal.style.visibility = 'visible'
 }
 
 hamburger.addEventListener("click", (e) => toggleUserMenu())

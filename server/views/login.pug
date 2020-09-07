@@ -2,7 +2,7 @@ block append styles
   link(rel='stylesheet', href='/css/login.css')
 
 mixin login(isFailed)
-    div#login-modal(style="display:none;" isFailed=isFailed)
+    div#login-modal(style="visibility:hidden;" isFailed=isFailed)
         article#login
             a(href="/")
                 img.close-button(src="/static/x-icon.svg")
