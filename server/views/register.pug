@@ -2,7 +2,7 @@ block append styles
   link(rel='stylesheet', href='/css/register.css')
 
 mixin register(isDuplicated, error)
-    div#register-modal(style="display:none;" isDuplicated=isDuplicated)
+    div#register-modal(style="visibility: hidden" isDuplicated=isDuplicated)
         article#register
             a(href="/")
                 img.close-button(src="/static/x-icon.svg")

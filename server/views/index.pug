@@ -5,6 +5,7 @@ html
         link(rel='stylesheet', href='/css/index.css')
     body
         include navbar.pug
+        include dayPicker.pug
         +navBar(isLoggedIn, isFailed, isDuplicated)  
         ariticle.reservation
             ul.tab
@@ -14,17 +15,19 @@ html
             form(action="/search").search
                 div.search-input.search-large
                     label(for="location") 위치
-                    input(type="text" name="location" placeholder="어디로 여행가세요?")
-                div.search-input.search-medium
-                    label(for="checkin") 체크인
-                    input(type="text" name="checkin" placeholder="날짜 추가")
-                div.search-input.search-medium
-                    label(for="checkout") 체크아웃
-                    input(type="text" name="checkout" placeholder="날짜 추가")
-                div.search-input.search-medium
-                    label(for="personnel") 인원
-                    input(type="text" name="personnel" placeholder="게스트 추가")
-                button.search-button.search-small 검색
+                    input(id="location" type="text" name="location" placeholder="어디로 여행가세요?")
+                div#checkin.search-input.search-medium.calendar
+                    div.label 체크인
+                    div.input-div 날짜 추가
+                    +dayPicker(9)
+                div#checkout.search-input.search-medium.calendar
+                    div.label 체크아웃
+                    div.input-div 날짜 추가
+                div#guest.search-input.search-medium
+                    div.label 인원
+                    div.input-div 게스트 추가
+                div.search-small
+                    button.search-button 검색
         section.banner.banner-main
             h1 가까운 곳에서 즐기는<br>색다른 여행
             p 가까운 곳의 숨겨진 아름다움을 발견하는 색다른 <br> 휴가를 즐겨보세요.
@@ -45,6 +48,28 @@ html
                 div.banner-text
                     p.banner-title 집 전체
                     span.banner-desc 일행만을 위한 편안한 공간에서 친구 및 가족과 오붓한 시간을 보내세요.
+        article.banner.sub-section-2
+            div.text
+                h1 브로드웨이 온라인 체험
+                span 슬기로운 집콕 생활을 위한 색다른 방법 - 실시간으로 진행되는 인터랙티브<br>브로드웨이 공연에 참여하고 출연진과 대화를 나눠보세요.
+            section.banner-image
+                section.card.left
+                    img(src="https://a0.muscache.com/im/pictures/38aeacb5-7e77-4bf6-a813-754605020922.jpg?im_w=1680", alt="")
+                    p 라스베이거스 댄서의 하루
+                section.right
+                    div.top
+                        div.card
+                            img(src="https://a0.muscache.com/im/pictures/e77da774-9e72-46d6-a7fd-7d159f823046.jpg?im_w=720", alt="")
+                            p 아이샤 잭슨과 함께하는 사랑, 빛 치유의 저녁
+                        div.card
+                            img(src="https://a0.muscache.com/im/pictures/7f607dbc-c51c-482e-8b67-55ded3e7f864.jpg?im_w=720", alt="")
+                            p 아이샤 잭슨과 함께하는 사랑, 빛 치유의 저녁
+                    div.bottom
+                        div.card
+                            img(src="https://a0.muscache.com/im/pictures/d88db0e7-ef5b-49c6-ae07-af3525ac252f.jpg?im_w=1680", alt="")
+                            p 라이브 뮤지컬 참여하기
         block Footer
             include footer.pug
+    block script
+        script(src='/js/calendar.js')
     
