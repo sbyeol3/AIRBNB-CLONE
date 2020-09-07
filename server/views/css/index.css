@@ -112,36 +112,52 @@ button {
     border: 1px solid var(--main-border);
     background-color: #FFF;
     border-radius: 10px;
-    /* padding: 20px; */
+    padding: 15px;
     justify-content: space-between;
 }
 
 .day-picker .month {
     margin: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.month caption {
+.month .title {
     font-weight: 600;
     color: var(--main-black);
     margin: 20px;
 }
 
-.month th, .month td {
-    text-align: center;
+.month .week {
+    display: flex;
+    align-items: center;
+    margin: 3px 0;
 }
 
-.month td .day:hover{
+.attribute > span,
+.week .day {
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.week .able:hover{
     border: 1px solid var(--main-black);
     border-radius: 100%;
 }
 
-.month td {
-    width: 30px;
-    height: 30px;
-    padding: 13px 14px;
+.week .day {
     font-size: 14px;
     color: var(--main-black);
     font-weight: 600;
+}
+
+.week .past {
+    color: #484848;
+    opacity: 0.25;
 }
 
 .day-picker .attribute {
