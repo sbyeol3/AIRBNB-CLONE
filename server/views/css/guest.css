@@ -9,6 +9,7 @@
     border: 1px solid var(--main-border);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    cursor: default;
 }
 
 .adults, .children {
@@ -60,4 +61,12 @@
 .guest-count .plus:hover {
     border: 1px solid var(--main-black);
     color: var(--main-black);
+}
+
+.guest-count button[disabled],
+.guest-count button[disabled]:hover {
+    color: rgb(235, 235, 235);
+    border-color: rgb(235, 235, 235);
+    background-color: #FFF !important;
+    cursor: not-allowed;
 }
