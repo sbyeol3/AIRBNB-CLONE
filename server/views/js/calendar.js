@@ -59,14 +59,45 @@ const resetClassSelected = () => {
     }
 }
 
+const removeBgColor = () => {
+    const dayElements = document.getElementsByClassName('sel-between')
+    for (let i=0; i<dayElements.length;) {
+        const el = dayElements[i]
+        el.classList.remove('sel-between')
+    }
+}
+
 const addBgColor = () => {
     const { checkin, checkout } = selectedDate
     const dayElements = document.getElementsByClassName('day')
     for (let el of dayElements) {
+        const classOfElement = el.className.split(' ')
         const date = getDateFormat(el)
-        if (checkin < date && date < checkout) {
+        if (checkin < date && date < checkout && !classOfElement.includes('disable')) {
             el.classList.add('sel-between')
         }
+    }
+}
+
+const changeInner = () => {
+    const inInput = document.getElementById('checkin-input')
+    const outInput = document.getElementById('checkout-input')
+    const {checkin, checkout} = selectedDate
+
+    if (checkin) {
+        inInput.innerHTML = checkin
+        inInput.style.color = '#222'
+    } else {
+        inInput.innerHTML = '날짜 추가'
+        inInput.style.color = '#777'
+    }
+
+    if (checkout) {
+        outInput.innerHTML = checkout
+        outInput.style.color = '#222'
+    } else {
+        outInput.innerHTML = '날짜 추가'
+        outInput.style.color = '#777'
     }
 }
 
@@ -84,12 +115,15 @@ const changeSelectedDate= (el) => {
         selectedDate.checkin = null
         selectedDate.checkout = null
         resetClassSelected()
+        removeBgColor()
     } else {
         selectedDate.checkin = date
         selectedDate.checkout = null
         resetClassSelected()
+        removeBgColor()
         el.classList.add('sel-checkin')
     }
+    changeInner()
     console.log(selectedDate)
 }
 
