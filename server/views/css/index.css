@@ -176,6 +176,17 @@ button {
     color: var(--main-gray);
 }
 
+.month .sel-checkin,
+.month .sel-checkout {
+    background-color: #000;
+    color: #FFF;
+    border-radius: 100%;
+}
+
+.sel-between {
+    background-color: #F7F7F7;
+}
+
 .banner {
     max-width: 1250px;
     padding: 30px;
