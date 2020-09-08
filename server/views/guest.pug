@@ -1,0 +1,21 @@
+block append styles
+  link(rel='stylesheet', href='/css/guest.css')
+include guestCount.pug
+
+mixin guest(adults=0, children=0, infants=0)
+    div#guest-layer(style="visibility: hidden;")
+        div.adults.guest
+            div.text
+                span.main 성인
+                span.sub 만 13세 이상
+            +guestCount(adults)
+        div.children.guest
+            div.text
+                span.main 어린이
+                span.sub 2~12세
+            +guestCount(children)
+        div.infants.guest
+            div.text
+                span.main 유아
+                span.sub 2세 미만
+            +guestCount(infants)

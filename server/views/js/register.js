@@ -14,7 +14,7 @@ const checkDisabled = () => {
 
 const emailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
 const registerForm = document.getElementById("register-form")
-const inputs = document.getElementsByTagName("input")
+const inputs = document.getElementsByClassName('register-input')
 
 const condition = {
     email: {regexp: emailRegExp},
