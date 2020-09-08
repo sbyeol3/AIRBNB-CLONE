@@ -17,14 +17,14 @@ html
                     label(for="location") 위치
                     input(id="location" type="text" name="location" placeholder="어디로 여행가세요?")
                 div.search-input.search-medium
-                    div#checkin.calendar
+                    div#checkin.calendar.left-border
                         div.label 체크인
                         div#checkin-input.input-div 날짜 추가
-                    div#checkout.calendar
+                    div#checkout.calendar.left-border
                         div.label 체크아웃
                         div#checkout-input.input-div 날짜 추가
                     +dayPicker(9)
-                div#guest.search-input.search-small
+                div#guest.search-input.search-small.left-border
                     div.label 인원
                     div.input-div 게스트 추가
                 button.search-button 검색
