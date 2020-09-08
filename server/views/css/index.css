@@ -48,23 +48,34 @@ button {
 }
 
 .search-large {
-    flex: 2;
+    flex: 1.7;
 }
 
 .search-medium {
+    flex: 1.7;
     position: relative;
+    display: flex;
+    flex-direction: row;
     box-sizing: border-box;
-    flex: 1.3;
     cursor: pointer;
+    padding: 0;
 }
 
-.search-medium:hover {
+.search-medium .calendar {
+    box-sizing: border-box;
+    flex: 1;
+    padding: 17px 15px;
+    max-height: 100%;
+}
+
+.search-medium .calendar:hover {
     border: 2px solid rgba(0, 0, 0, 0.3);
     border-radius: 12px;
+    padding: 15px 13px;
 }
 
 .search-small {
-    flex: 0.9;
+    flex: 0.7;
     display: flex;
     justify-content: center;
 }
