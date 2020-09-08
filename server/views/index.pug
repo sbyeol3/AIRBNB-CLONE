@@ -6,6 +6,7 @@ html
     body
         include navbar.pug
         include dayPicker.pug
+        include guest.pug
         +navBar(isLoggedIn, isFailed, isDuplicated)  
         ariticle.reservation
             ul.tab
@@ -24,9 +25,11 @@ html
                         div.label 체크아웃
                         div#checkout-input.input-div 날짜 추가
                     +dayPicker(9)
-                div#guest.search-input.search-small.left-border
-                    div.label 인원
-                    div.input-div 게스트 추가
+                div.search-input.search-small.left-border
+                    div#guest
+                        div.label 인원
+                        div.input-div 게스트 추가
+                    +guest(0,0,0)
                 button.search-button 검색
         section.banner.banner-main
             h1 가까운 곳에서 즐기는<br>색다른 여행
@@ -72,4 +75,5 @@ html
             include footer.pug
     block script
         script(src='/js/calendar.js')
-    
+    block script
+        script(src='/js/guest.js')

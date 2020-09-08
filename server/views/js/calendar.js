@@ -1,9 +1,13 @@
 const calendars = document.getElementsByClassName('calendar')
 
 for (let calendar of calendars) {
+    const guestLayer = document.getElementById('guest-layer')
     const calendarLayer = document.getElementById("calendar")
     calendar.addEventListener("click", () => {
-        if (calendarLayer.style.visibility === "hidden") calendarLayer.style.visibility = "visible"
+        if (calendarLayer.style.visibility === "hidden") {
+            guestLayer.style.visibility = "hidden"
+            calendarLayer.style.visibility = "visible"
+        }
         else calendarLayer.style.visibility = "hidden"
     })
 }
