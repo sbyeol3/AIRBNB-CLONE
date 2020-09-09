@@ -43,14 +43,14 @@ const onClickPlus = (numElement, type) => {
     changeGuestText()
 }
 
-const onClickPlusInfant = (adultElement, numElement) => {
+const onClickPlusMinors = (adultElement, numElement, type) => {
     const numElementOfAdults = adultElement.childNodes[1]
     const adultsCount = +numElementOfAdults.getAttribute('value')
     if (adultsCount === 0) {
         onClickPlus(numElementOfAdults, 'adults')
         handleMinusButton(adultElement.childNodes)
     }
-    onClickPlus(numElement, 'infants')
+    onClickPlus(numElement, type)
 }
 
 const changeGuestText = () => {
@@ -84,8 +84,8 @@ for (let countElement of guestCountElements) {
         handleMinusButton(childNodes)
     })
     plusButton.addEventListener('click', () => {
-        if (guestType === 'infants') {
-            onClickPlusInfant(guestCountElements[0], numElement)
+        if (guestType !== 'adults') {
+            onClickPlusMinors(guestCountElements[0], numElement, guestType)
         } else onClickPlus(numElement, guestType)
         handleMinusButton(childNodes, guestType)
     })
