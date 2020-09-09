@@ -16,7 +16,7 @@ searchButton.addEventListener('click', (event) => {
     const query = {checkin, checkout, ...guestCount}
 
     for (let [key, value] of Object.entries(query)) {
-        if (value) queryString += `&${key}=${value}`
+        if (value && value !== '날짜 추가') queryString += `&${key}=${value}`
     }
     window.location.href = `/search${queryString}`
 })

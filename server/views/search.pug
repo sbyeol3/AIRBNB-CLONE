@@ -7,7 +7,7 @@ html
         include navbar.pug
         +navBar(isLoggedIn)  
         include searchHeader.pug
-        +header(location)
+        +header(location, checkin, checkout, guest)
         div#result
             article#items
                 div.search-top
