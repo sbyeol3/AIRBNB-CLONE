@@ -1,15 +1,13 @@
 const fs = require('fs')
-const data = require('./data.json')
+const data = require('./data1.json')
 
 const newData = data.map((item)=> {
-    const review = Math.floor(Math.random() * 150) + 2
-    const score = (Math.random() * 5 + 1).toFixed(2)
+    const maxGuest = Math.floor(Math.random() * 15) + 1
     return {
         ...item,
-        review,
-        score
+        maxGuest,
     }
 })
 
 const newJson = JSON.stringify(newData)
-fs.writeFileSync('./data1.json', newJson)
+fs.writeFileSync('./data2.json', newJson)
