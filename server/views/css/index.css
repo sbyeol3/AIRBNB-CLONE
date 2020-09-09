@@ -109,7 +109,7 @@ button {
     font-size: 14px;
 }
 
-.search-button { 
+#search-button { 
     width: 100px;
     /* background-image: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% ); */
     background-color: var(--main-red);
