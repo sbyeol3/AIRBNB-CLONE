@@ -74,6 +74,8 @@ html
         block Footer
             include footer.pug
     block script
+        script(type='module' src='/js/search.js')
+    block script
         script(src='/js/calendar.js')
     block script
-        script(src='/js/guest.js')
+        script(type='module' src='/js/guest.js')
