@@ -1,5 +1,5 @@
-mixin guestCount(num=0)
-    div.guest-count
+mixin guestCount(num=0, guestType)
+    div.guest-count(guestType=guestType)
         button.minus(type='button') -
         div.num(value=num) #{num}
         button.plus(type='button') +
