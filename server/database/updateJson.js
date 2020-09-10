@@ -1,5 +1,5 @@
 const fs = require('fs')
-const data = require('./data1.json')
+const data = require('./data2.json')
 
 const newData = data.map((item)=> {
     const maxGuest = Math.floor(Math.random() * 15) + 1
@@ -9,5 +9,23 @@ const newData = data.map((item)=> {
     }
 })
 
-const newJson = JSON.stringify(newData)
-fs.writeFileSync('./data2.json', newJson)
+const priceRegexp = /\₩(\d|\,){1,}/g
+const updatePrice = data.map((item) => {
+    const {price} = item
+    const [original, reduced] = price.match(priceRegexp)
+    if (reduced) {
+        return {
+            ...item,
+            originalPrice: original,
+            price: reduced
+        }
+    } else {
+        return {
+            ...item,
+            price: original
+        }
+    }
+})
+
+const newJson = JSON.stringify(updatePrice)
+fs.writeFileSync('./data3.json', newJson)
