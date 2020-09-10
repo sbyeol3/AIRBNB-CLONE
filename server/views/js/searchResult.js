@@ -41,9 +41,9 @@ const fetchAccommodation = (id) => {
     .catch((err) => console.log(err))
 }
 
+const checkin = localStorage.getItem('condition').split(';')[0]
 bookButtons.forEach((btn) => {
     const id = btn.getAttribute('id')
-    btn.addEventListener('click', () => {
-        fetchAccommodation(id)
-    })
+    if (checkin === '날짜 추가') btn.setAttribute('disabled', true)
+    btn.addEventListener('click', () => fetchAccommodation(id))
 })
