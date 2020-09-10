@@ -7,7 +7,7 @@ const handleInvalidLocation = () => {
 
 searchButton.addEventListener('click', (event) => {
     event.preventDefault()
-    const location = document.getElementById('location').value
+    const location = document.getElementById('location').value.trim()
     if (!location) return handleInvalidLocation()
 
     let queryString = `?location=${location}`
