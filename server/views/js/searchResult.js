@@ -1,4 +1,4 @@
-import {initializeBooking, bookModal} from '/js/book.js'
+import {updateBooking, bookModal} from '/js/book.js'
 
 const conditionButtons = document.getElementsByClassName('condition')
 const selected = { current: null }
@@ -28,14 +28,15 @@ const fetchAccommodation = async (id) => {
     localStorage.setItem('review', review)
 
     bookModal.style.visibility = 'visible'
-    initializeBooking()
+    updateBooking()
 }
 
 const bookButtons = document.querySelectorAll('.booking')
 const checkin = localStorage.getItem('condition').split(';')[0]
+const guest = localStorage.getItem('condition').split(';')[2]
 
 bookButtons.forEach((btn) => {
     const id = btn.getAttribute('id')
-    if (checkin === '날짜 추가') btn.setAttribute('disabled', true)
+    if (checkin === '날짜 추가' || guest === '0') btn.setAttribute('disabled', true)
     btn.addEventListener('click', () => fetchAccommodation(id))
 })

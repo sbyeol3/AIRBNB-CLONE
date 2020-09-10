@@ -1,3 +1,8 @@
+const maxCleaning = 100000
+const minCleaning = 80000
+const rateService = 0.15
+const rateFee = 0.04
+
 const closeButton = document.getElementById('book-close')
 const bookModal = document.getElementById('book-modal')
 
@@ -27,22 +32,24 @@ const initializeBooking = () => {
     bookingPrice.innerHTML = price
     bookingScore.innerHTML = localStorage.getItem('score')
     bookingreview.innerHTML = ` (리뷰 ${localStorage.getItem('review')}개)`
+}
 
+initializeBooking()
+
+const updateBooking = () => {
+    const price = localStorage.getItem('price')
     const [checkin, checkout, guest] = localStorage.getItem('condition').split(';')
     const nights = calculateNights(checkin, checkout)
     const multiplied = getPureNumber(price) * nights
-    const cleaning = Math.floor(Math.random() * 100000) + 8000
-    const service = multiplied * 0.15
-    const fee = multiplied * 0.04
+
+    const cleaning = Math.floor(Math.random() * (maxCleaning - minCleaning)) + minCleaning
+    const service = +(multiplied * rateService).toFixed(0)
+    const fee = +(multiplied * rateFee).toFixed(0)
     const total = multiplied + cleaning + service + fee
 
     document.getElementById('date-checkin').innerHTML = checkin
     document.getElementById('date-checkout').innerHTML = checkout
-    if (guest !== '0') {
-        document.getElementById('book-guest').innerHTML = `게스트 ${guest}명`
-    } else {
-        document.getElementById('book-guest').innerHTML = '게스트를 추가하지 않았습니다.'
-    }
+    document.getElementById('book-guest').innerHTML = `게스트 ${guest}명`
 
     const costCalc = document.getElementById('cost-calc')
     const costMultiplied = document.getElementById('cost-multiplied')
@@ -59,4 +66,4 @@ const initializeBooking = () => {
     costTotal.innerHTML = `₩${getPriceFormat(total)}`
 }
 
-export {initializeBooking, bookModal}
+export {updateBooking, bookModal}
