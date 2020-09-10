@@ -2,6 +2,7 @@
 
 body {
     margin: 0;
+    color: var(--main-black);
 }
 
 .search-nav {
@@ -47,7 +48,45 @@ body {
 }
 
 .search-top {
-    padding: 100px 0 0 0;
+    padding: 100px 0 0 10px;
+}
+
+.search-top .title {
+    margin: 10px 0px;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.search-top .sub-title {
+    margin: 40px 0 0 0;
+    font-size: 14px;
+    color: var(--main-gray);
+}
+
+.search-buttons {
+    width: 600px;
+    margin: 20px 0;
+    display: flex;
+}
+
+.search-buttons .condition {
+    margin-right: 12px;
+    padding: 9px 17px;
+    outline: none;
+    color: var(--main-darkgray);
+    border: 1px solid rgba(var(--main-border1),0.7);
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.search-buttons .condition:hover {
+    border-color: var(--main-black);
+}
+
+.search-buttons .condition[selected] {
+    margin-right: 10px;
+    border: 2px solid var(--main-black);
+    background-color: rgba(var(--main-border1), 0.1);
 }
 
 #result {
@@ -151,9 +190,9 @@ body {
 }
 
 .price .original {
-    margin-bottom: 3px;
+    margin-bottom: 1px;
     color: var(--main-gray);
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .price .price-number {

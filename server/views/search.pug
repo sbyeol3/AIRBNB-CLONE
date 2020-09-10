@@ -11,9 +11,19 @@ html
         div#result
             article#items
                 div.search-top
-                    h2 #{length}개의 #{location}의 숙소
+                    p.sub-title #{length}개 이상의 숙소 ∙ #{checkin} - #{checkout}
+                    - if (guest)
+                        span.guest ∙ 게스트 #{guest}명
+                    p.title #{location}의 숙소
+                    div.search-buttons
+                        button.condition 유연한 환불 정책
+                        button.condition 숙소 유형
+                        button.condition 요금
+                        button.condition 침실과 침대
+                        button.condition 필터 추가하기
                 include searchItem.pug
                 - for (let item of data)
                     - const {title, description1, description2, price, originalPrice, image, score, review} = item
-                    +searchItem(title, description1, description2, price, originalPrice, image, score, review)  
-            article#search-map
+                    +searchItem(title, description1, description2, price, originalPrice, image, score, review)
+    block script
+        script(src='/js/searchResult.js')
