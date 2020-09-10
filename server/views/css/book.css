@@ -13,7 +13,7 @@
     background-color: #FFF;
 }
 
-#close {
+#book-close {
     width: 25px;
     position: absolute;
     top: 50px;
@@ -22,7 +22,7 @@
     cursor: pointer;
 }
 
-.price {
+#book .price {
     margin: 10px 0 0 0;
     font-weight: 800;
 }
@@ -56,6 +56,12 @@
 #book .condition {
     padding: 15px 20px;
     border: 1px solid rgba(var(--main-border1), 0.5);
+    font-size: 18px;
+}
+
+#book .condition.date {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .cost {
