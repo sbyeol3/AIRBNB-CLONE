@@ -9,7 +9,7 @@ const newData = data.map((item)=> {
     }
 })
 
-const priceRegexp = /\₩(\d|\,){1,}/g
+const priceRegexp = /\₩(\d|\,){1,}/g // 문자열에서 ₩00,000 포맷으로 되어있는 가격을 가져오는 정규식
 const updatePrice = data.map((item) => {
     const {price} = item
     const [original, reduced] = price.match(priceRegexp)
@@ -27,11 +27,10 @@ const updatePrice = data.map((item) => {
     }
 })
 
-let id = 0
-const updateID = updatePrice.map((item) => {
+const updateID = updatePrice.map((item, id) => {
     return {
         ...item,
-        id: id++
+        id
     }
 })
 

@@ -59,4 +59,4 @@ const initializeBooking = () => {
     costTotal.innerHTML = `₩${getPriceFormat(total)}`
 }
 
-export {initializeBooking}
+export {initializeBooking, bookModal}
