@@ -44,4 +44,10 @@ router.get('/', async (req, res) => {
     })
 })
 
+router.get('/accommodation', (req, res) => {
+    const { id } = req.query
+    const resData = data[id]
+    return res.json(resData)
+})
+
 module.exports = router
