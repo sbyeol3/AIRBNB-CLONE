@@ -18,5 +18,6 @@ searchButton.addEventListener('click', (event) => {
     for (let [key, value] of Object.entries(query)) {
         if (value && value !== '날짜 추가') queryString += `&${key}=${value}`
     }
+    localStorage.setItem('condition', `${checkin};${checkout};${guestCount.adults+guestCount.children}`)
     window.location.href = `/search${queryString}`
 })
