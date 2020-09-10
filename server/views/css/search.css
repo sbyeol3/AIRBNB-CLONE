@@ -1,3 +1,5 @@
+@import './color.css';
+
 body {
     margin: 0;
 }
@@ -136,7 +138,25 @@ body {
     color: #717171;
 }
 
-.bottom > .price {
+.bottom .price {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+}
+
+.price .number {
+    font-weight: 600;
+}
+
+.price .original {
+    margin-bottom: 3px;
+    color: var(--main-gray);
+    font-size: 14px;
+}
+
+.price .price-number {
     margin-left: auto;
 }
 

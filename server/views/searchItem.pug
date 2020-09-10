@@ -1,4 +1,4 @@
-mixin searchItem(title, description1, description2, price, image, score, review)
+mixin searchItem(title, description1, description2, price, originalPrice, image, score, review)
     section.item
         img(src=image, alt="image")
         div.item-text
@@ -12,4 +12,10 @@ mixin searchItem(title, description1, description2, price, image, score, review)
                     img.score-icon(src="/static/star.svg", alt="")
                     span #{score}
                 span.review (#{review})
-                span.price=price
+                span.price 
+                    - if (originalPrice)
+                        span.original 이전 가격 :
+                            span.original-price #{originalPrice}
+                    span.price-number
+                        span.number #{price}
+                        span /1박

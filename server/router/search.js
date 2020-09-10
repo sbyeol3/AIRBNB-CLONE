@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const data = require('../database/data2.json')
+const data = require('../database/data3.json')
 const { checkSidinSessionDB } = require('../models/userData')
 
 const getMonthDayFormat = (date) => {
