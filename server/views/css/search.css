@@ -177,6 +177,7 @@ body {
 .item-text > .bottom {
     margin-top: auto;
     display: flex;
+    align-items: flex-end;
 }
 
 .bottom > .score {

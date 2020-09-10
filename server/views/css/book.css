@@ -27,7 +27,7 @@
     font-weight: 800;
 }
 
-.review {
+#book .review {
     padding-bottom: 20px;
     font-size: 13px;
     border-bottom: 1px solid rgba(var(--main-border1), 0.3);
