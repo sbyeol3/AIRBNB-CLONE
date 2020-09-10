@@ -1,0 +1,94 @@
+@import './color.css';
+
+#book {
+    max-width: 550px;
+    position: relative;
+    margin: 30px auto;
+    padding: 30px 40px 25px 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px;
+    border-radius: 12px;
+    color: var(--main-darkgray);
+    background-color: #FFF;
+}
+
+#close {
+    width: 25px;
+    position: absolute;
+    top: 50px;
+    right: 35px;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.price {
+    margin: 10px 0 0 0;
+    font-weight: 800;
+}
+
+.review {
+    padding-bottom: 20px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(var(--main-border1), 0.3);
+}
+
+.review img {
+    width: 12px;
+    height: 12px;
+    margin-right: 2px;
+}
+
+.review-count {
+    color: var(--main-gray);
+}
+
+.price-num {
+    font-size: 35px;
+}
+
+.label {
+    margin: 20px 0 1px 0;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+#book .condition {
+    padding: 15px 20px;
+    border: 1px solid rgba(var(--main-border1), 0.5);
+}
+
+.cost {
+    margin: 20px 0;
+}
+
+.cost .desc {
+    display: flex;
+    align-content: center;
+    padding : 18px 0;
+    border-bottom: 1px solid rgba(var(--main-border1), 0.4);
+}
+
+.cost .desc .cost-right {
+    margin-left: auto;
+}
+
+.cost .total-cost {
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+#book-button {
+    color: #FFF;
+    line-height: 24px;
+    padding: 15px;
+    background-color: #FF5A5F;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.notice {
+    text-align: center;
+    font-size: 14px;
+}

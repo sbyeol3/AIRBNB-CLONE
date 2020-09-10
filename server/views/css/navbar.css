@@ -22,7 +22,8 @@ button:disabled {
 }
 
 #register-modal,
-#login-modal {
+#login-modal,
+#book-modal {
     position: fixed;
     z-index: 20;
     left: 0;

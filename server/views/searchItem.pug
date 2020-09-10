@@ -1,5 +1,5 @@
-mixin searchItem(title, description1, description2, price, originalPrice, image, score, review)
-    section.item
+mixin searchItem(id, title, description1, description2, price, originalPrice, image, score, review)
+    section.item.search-item
         img(src=image, alt="image")
         div.item-text
             p.title=title
@@ -19,3 +19,5 @@ mixin searchItem(title, description1, description2, price, originalPrice, image,
                     span.price-number
                         span.number #{price}
                         span /1박
+                        button.booking(id=id) 예약하기
+            

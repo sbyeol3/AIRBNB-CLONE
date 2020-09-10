@@ -1,0 +1,40 @@
+block append styles
+  link(rel='stylesheet', href='/css/book.css')
+
+mixin book(id, price='₩99,692', score=4.95, reviews=95, checkin='2020.11.5', checkout='2020.11.10', guest=4)
+    div#book-modal
+        div#book
+            img#close(src="/static/x-icon.svg", alt="close button")
+            span.price 
+                span.price-num #{price} 
+                span /박
+            div.review 
+                img(src="/static/star.svg", alt="score-star")
+                span #{score} 
+                span.review-count (후기 #{reviews}개)
+            span.label 날짜
+            div.date.condition
+                span.date-checkin #{checkin}
+                span.date-checkout #{checkout}
+            span.label 인원
+            div.guest.condition
+                span 게스트 #{guest}명
+            section.cost
+                div.calculation.desc
+                    div.cost-left ₩99,692 x 14박
+                    div.cost-right ₩1,395,682
+                div.cleaning.desc
+                    div.cost-left 청소비
+                    div.cost-right ₩34,208
+                div.service.desc
+                    div.cost-left 서비스 수수료
+                    div.cost-right ₩1,395,682
+                div.fee.desc
+                    div.cost-left 숙박세와 수수료
+                    div.cost-right ₩1,395,682
+                div.total-cost.desc
+                    b.cost-left 합계
+                    div.cost-right ₩1,693,811
+            div#book-button 예약하기
+            p.notice 예약 확정 전에는 요금이 청구되지 않습니다.
+    
