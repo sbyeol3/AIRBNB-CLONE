@@ -27,5 +27,13 @@ const updatePrice = data.map((item) => {
     }
 })
 
-const newJson = JSON.stringify(updatePrice)
+let id = 0
+const updateID = updatePrice.map((item) => {
+    return {
+        ...item,
+        id: id++
+    }
+})
+
+const newJson = JSON.stringify(updateID)
 fs.writeFileSync('./data3.json', newJson)
