@@ -263,7 +263,7 @@ button {
 
 .sub-section-2 {
     color: #FFF;
-    padding: 30px 55px;
+    padding: 30px 60px;
     margin: 0;
     position: relative;
     background-color: #000;
@@ -282,21 +282,25 @@ button {
 }
 
 .sub-section-2 .card {
-    padding: 10px;
+    position: relative;
+    margin: 10px;
 }
 
 .sub-section-2 .card p {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
     box-sizing: border-box;
     border-radius: 0 0 16px 16px;
     background-color: var(--main-black);
     margin: 0;
-    min-height: 76px;
+    min-height: 74px;
     padding: 15px;
 }
 
 .sub-section-2 img {
     width: 100%;
-    border-radius: 16px 16px 0 0;
+    border-radius: 17px;
 }
 
 .sub-section-2 .banner-image {
@@ -304,7 +308,7 @@ button {
 }
 
 .sub-section-2 .banner-image .left {
-    flex: 1;
+    flex: 1.0;
 }
 
 .sub-section-2 .banner-image .right {
