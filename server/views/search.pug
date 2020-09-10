@@ -11,9 +11,11 @@ html
         div#result
             article#items
                 div.search-top
-                    p.sub-title #{length}개 이상의 숙소 ∙ #{checkin} - #{checkout}
-                    - if (guest)
-                        span.guest ∙ 게스트 #{guest}명
+                    p.sub-title #{length}개 이상의 숙소 
+                        - if (checkin)
+                            span ∙ #{checkin} - #{checkout}
+                        - if (guest)
+                            span.guest ∙ 게스트 #{guest}명
                     p.title #{location}의 숙소
                     div.search-buttons
                         button.condition 유연한 환불 정책
