@@ -23,7 +23,16 @@ const getPriceFormat = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
 
+const [checkin, checkout, guest] = localStorage.getItem('condition').split(';')
 const initializeBooking = () => {
+    document.getElementById('date-checkin').innerHTML = checkin
+    document.getElementById('date-checkout').innerHTML = checkout
+    document.getElementById('book-guest').innerHTML = `게스트 ${guest}명`
+}
+
+initializeBooking()
+
+const updateBooking = () => {
     const bookingPrice = document.getElementById('book-price')
     const bookingScore = document.getElementById('book-score')
     const bookingreview = document.getElementById('book-review')
@@ -32,13 +41,7 @@ const initializeBooking = () => {
     bookingPrice.innerHTML = price
     bookingScore.innerHTML = localStorage.getItem('score')
     bookingreview.innerHTML = ` (리뷰 ${localStorage.getItem('review')}개)`
-}
 
-initializeBooking()
-
-const updateBooking = () => {
-    const price = localStorage.getItem('price')
-    const [checkin, checkout, guest] = localStorage.getItem('condition').split(';')
     const nights = calculateNights(checkin, checkout)
     const multiplied = getPureNumber(price) * nights
 
@@ -46,10 +49,6 @@ const updateBooking = () => {
     const service = +(multiplied * rateService).toFixed(0)
     const fee = +(multiplied * rateFee).toFixed(0)
     const total = multiplied + cleaning + service + fee
-
-    document.getElementById('date-checkin').innerHTML = checkin
-    document.getElementById('date-checkout').innerHTML = checkout
-    document.getElementById('book-guest').innerHTML = `게스트 ${guest}명`
 
     const costCalc = document.getElementById('cost-calc')
     const costMultiplied = document.getElementById('cost-multiplied')
