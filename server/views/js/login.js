@@ -1,2 +1,2 @@
-const modal = document.getElementById('login-modal')
-if (modal.getAttribute("isFailed")) modal.style.visibility = "visible"
+const loginModal = document.getElementById('login-modal')
+if (loginModal.getAttribute("isFailed")) loginModal.style.visibility = "visible"
