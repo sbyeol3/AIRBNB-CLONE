@@ -27,7 +27,9 @@ router.get('/', async (req, res) => {
 
     const result = data.filter((value)=> {
         const { place, maxGuest } = value
-        if (place.includes(location) && guest < maxGuest+1) return true
+        if (guest < maxGuest+1) {
+            if (place.includes(location) || location.includes(place)) return true
+        }
         return false
     })
 

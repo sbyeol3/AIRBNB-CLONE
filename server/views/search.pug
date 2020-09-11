@@ -25,6 +25,9 @@ html
                         button.condition 필터 추가하기
                 include book.pug
                 +book(book-id)
+                include zeroResult.pug
+                if (data.length === 0)
+                    +zeroResult()
                 include searchItem.pug
                 - for (let item of data)
                     - const {id, title, description1, description2, price, originalPrice, image, score, review} = item
