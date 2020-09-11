@@ -3,6 +3,10 @@ html
     head
         title='Airbnb : 검색 결과'
         link(rel='stylesheet', href='/css/search.css')
+        link(rel='stylesheet', href='/css/navbar.css')
+        link(rel='stylesheet', href='/css/login.css')
+        link(rel='stylesheet', href='/css/register.css')
+        link(rel='stylesheet', href='/css/book.css')
     body
         include navbar.pug
         +navBar(isLoggedIn)  
@@ -34,3 +38,6 @@ html
                     +searchItem(id, title, description1, description2, price, originalPrice, image, score, review)
     block script
         script(type='module' src='/js/searchResult.js')
+        script(src='/js/main.js')
+        script(src='/js/login.js')
+        script(src='/js/register.js')

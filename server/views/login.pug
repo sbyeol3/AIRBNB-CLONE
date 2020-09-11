@@ -1,6 +1,3 @@
-block append styles
-  link(rel='stylesheet', href='/css/login.css')
-
 mixin login(isFailed)
     div#login-modal(style="visibility:hidden;" isFailed=isFailed)
         article#login
@@ -15,7 +12,3 @@ mixin login(isFailed)
                 button#login-button(type="submit") 로그인
             p.register 에어비앤비 계정이 없으세요?&nbsp;
                 a(href="/users/register") 회원 가입
-    block append script
-        script(src='/js/main.js')
-    block append script
-        script(src='/js/login.js')

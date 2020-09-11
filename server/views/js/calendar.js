@@ -90,10 +90,10 @@ const changeInner = () => {
 
     if (checkin) {
         inInput.innerHTML = checkin
-        inInput.style.color = '#222'
+        inInput.style.color = '#222' // black
     } else {
         inInput.innerHTML = '날짜 추가'
-        inInput.style.color = '#777'
+        inInput.style.color = '#777' // gray
     }
 
     if (checkout) {
@@ -128,7 +128,6 @@ const changeSelectedDate= (el) => {
         el.classList.add('sel-checkin')
     }
     changeInner()
-    console.log(selectedDate)
 }
 
 for (let el of ableElements) {

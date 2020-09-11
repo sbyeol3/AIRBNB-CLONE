@@ -3,6 +3,9 @@ html
     head
         title='Airbnb'
         link(rel='stylesheet', href='/css/index.css')
+        link(rel='stylesheet', href='/css/navbar.css')
+        link(rel='stylesheet', href='/css/login.css')
+        link(rel='stylesheet', href='/css/register.css')
     body
         include navbar.pug
         include dayPicker.pug
@@ -75,7 +78,8 @@ html
             include footer.pug
     block script
         script(type='module' src='/js/search.js')
-    block script
-        script(src='/js/calendar.js')
-    block script
         script(type='module' src='/js/guest.js')
+        script(src='/js/calendar.js')
+        script(src='/js/main.js')
+        script(src='/js/login.js')
+        script(src='/js/register.js')
