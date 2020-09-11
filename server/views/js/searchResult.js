@@ -23,9 +23,9 @@ const fetchAccommodation = async (id) => {
     const jsonData = await rawResponse.json()
 
     const {price, score, review} = jsonData
-    await localStorage.setItem('price', price)
-    await localStorage.setItem('score', score)
-    await localStorage.setItem('review', review)
+    localStorage.setItem('price', price)
+    localStorage.setItem('score', score)
+    localStorage.setItem('review', review)
 
     bookModal.style.visibility = 'visible'
     updateBooking()

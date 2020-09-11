@@ -9,7 +9,10 @@ mixin register(isDuplicated, error)
             h3.title 회원 가입
             section.social-login
                 p 
-                    a 페이스북 또는 구글로 가입하세요
+                    a 페이스북 
+                    span 또는 
+                    a 구글
+                    span 로 가입하세요
             form#register-form(action="/users/register" method="POST")
                 input.register-input.wrong-input(type="email" placeholder="이메일 주소" autocomplete="off" name="email")
                 input.register-input.wrong-input(type="text" placeholder="이름(예 : 길동)" autocomplete="off" name="name")

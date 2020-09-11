@@ -1,7 +1,7 @@
 #register {
     max-width: 550px;
     margin: 20px auto;
-    padding: 5px 20px 20px 20px;
+    padding: 10px 20px 20px 20px;
     box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px;
     border-radius: 12px;
     color: #484848;
@@ -12,10 +12,13 @@
 
 #register > .title {
     text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(var(--main-border1),0.4);
 }
 
 .social-login {
     margin: 20px auto;
+    text-align: center;
     font-size: 14px;
     color: rgb(72, 72, 72);
     font-weight: 600;
@@ -30,6 +33,10 @@
     border-radius: 5px;
     outline: none;
     font-size: 16px;
+}
+
+.register-input:focus {
+    border-color: var(--main-link) !important;
 }
 
 #register-form > #register-button {
