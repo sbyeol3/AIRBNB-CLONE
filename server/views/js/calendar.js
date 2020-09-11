@@ -12,14 +12,14 @@ for (let calendar of calendars) {
     })
 }
 
-const thirty = [4,6,9,11]
 const picker = document.getElementsByClassName('month')
 
 for (let m of picker) {
+    const thirty = [4,6,9,11]
     const month = m.getAttribute("month")
     let days = 31
     if (month === 2) days = 28
-    else if (thirty.includes(+month)) days = 30
+    else if (thirty.includes(+month)) days = 30 // days를 한줄로 구하기
 
     const firstDay = new Date(2020, month-1, 1).getDay()
     const today = new Date().getDate()
@@ -75,9 +75,8 @@ const addBgColor = () => {
     const { checkin, checkout } = selectedDate
     const dayElements = document.getElementsByClassName('day')
     for (let el of dayElements) {
-        const classOfElement = el.className.split(' ')
         const date = getDateFormat(el)
-        if (checkin < date && date < checkout && !classOfElement.includes('disable')) {
+        if (checkin < date && date < checkout && el.classList.contains('disabled')) {
             el.classList.add('sel-between')
         }
     }

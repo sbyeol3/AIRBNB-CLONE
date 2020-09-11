@@ -1,7 +1,7 @@
-const maxCleaning = 100000
-const minCleaning = 80000
-const rateService = 0.15
-const rateFee = 0.04
+const MAX_CLEANING = 100000
+const MIN_CLEANING = 80000
+const RATE_SERVICE = 0.15
+const RATE_FEE = 0.04
 
 const closeButton = document.getElementById('book-close')
 const bookModal = document.getElementById('book-modal')
@@ -45,9 +45,9 @@ const updateBooking = () => {
     const nights = calculateNights(checkin, checkout)
     const multiplied = getPureNumber(price) * nights
 
-    const cleaning = Math.floor(Math.random() * (maxCleaning - minCleaning)) + minCleaning
-    const service = +(multiplied * rateService).toFixed(0)
-    const fee = +(multiplied * rateFee).toFixed(0)
+    const cleaning = Math.floor(Math.random() * (MAX_CLEANING - MIN_CLEANING)) + MIN_CLEANING
+    const service = +(multiplied * RATE_SERVICE).toFixed(0)
+    const fee = +(multiplied * RATE_FEE).toFixed(0)
     const total = multiplied + cleaning + service + fee
 
     const costCalc = document.getElementById('cost-calc')

@@ -9,10 +9,6 @@ const user = {
     password: 'master'
 }
 
-// userdb.insert(user, (err, doc) => {
-//     console.log(doc)
-// })
-
 const insertNewSessionID = (sid, userID) => {
     const age = new Date().getTime() + 1800000
     return new Promise((resolve, reject) => {
