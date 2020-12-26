@@ -1,4 +1,18 @@
-# J109 : Clone Airbnb
+# 에어비앤비 클론 프로젝트
+
+## Tech Stack
+- FE : pug template, css
+- BE : Express
+- Deploy : heroku
+
+## Screen Shot
+
+### Main
+![](https://i.imgur.com/IiHy4A6.jpg)
+![](https://i.imgur.com/IB40HQG.png)
+
+### Search
+![](https://i.imgur.com/wRZVCUL.png)
 
 배포 링크 : https://j109.herokuapp.com/
 
